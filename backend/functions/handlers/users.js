@@ -111,6 +111,7 @@ exports.addUserDetails = (req, res) => {
       return res.status(500).json({error: err.code});
     });
 };
+
 // Get any user's details
 exports.getUserDetails = (req, res) => {
   let userData = {};
@@ -148,6 +149,7 @@ exports.getUserDetails = (req, res) => {
       return res.status(500).json({error: err.code});
     });
 };
+
 // Get own user details
 exports.getAuthenticatedUser = (req, res) => {
   let userData = {};
