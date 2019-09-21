@@ -3,6 +3,7 @@ import axios from "axios";
 import Grid from "@material-ui/core/Grid";
 
 import Scream from "../components/Scream";
+import Profile from "../components/Profile";
 
 export default class home extends Component {
   state = {
@@ -14,7 +15,6 @@ export default class home extends Component {
       .get("/screams")
       .then(res => {
         this.setState({screams: res.data});
-        console.log(res.data);
       })
       .catch(err => console.log(err));
   }
