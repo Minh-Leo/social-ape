@@ -18,3 +18,8 @@ body {
 a {
   text-decoration: none;
 }
+
+.nav-container svg {
+  color: #fff;
+  /* padding: 0px 5px 0px 5px; */
+}
