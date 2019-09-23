@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {Link} from "react-router-dom";
 import dayjs from "dayjs";
-import EditDetails from "../components/EditDetails";
-import MyButton from "../util/MyButton";
+import EditDetails from "./EditDetails";
+import MyButton from "../../util/MyButton";
 
 // MUI
 import Button from "@material-ui/core/Button";
@@ -19,7 +19,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 
 import {connect} from "react-redux";
-import {logoutUser, uploadImage} from "../redux/actions/userActions";
+import {logoutUser, uploadImage} from "../../redux/actions/userActions";
 
 const styles = theme => ({...theme.spreadIt});
 

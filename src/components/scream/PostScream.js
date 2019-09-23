@@ -1,10 +1,10 @@
 import React, {Component, Fragment} from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 
 import {connect} from "react-redux";
-import {postScream, clearErrors} from "../redux/actions/dataActions";
+import {postScream, clearErrors} from "../../redux/actions/dataActions";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   closeButton: {
     position: "absolute",
-    top: "8%",
+    top: "6%",
     left: "90%"
   },
   progressSpinner: {
@@ -43,9 +43,6 @@ class PostScream extends Component {
     if (nextProps.UI.errors) {
       return {errors: nextProps.UI.errors};
     } else return null;
-    // if (!nextProps.UI.errors && !nextProps.UI.loading) {
-    //   this.setState({ body: '', open: false, errors: {} });
-    // }
   }
 
   handleOpen = () => {
