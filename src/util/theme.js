@@ -28,7 +28,8 @@ export default {
     },
     button: {
       marginTop: 20,
-      marginBottom: 10
+      marginBottom: 10,
+      margin: "10%"
     },
     customError: {
       color: "red",

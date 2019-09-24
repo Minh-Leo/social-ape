@@ -10,7 +10,7 @@ import axios from "axios";
 // REDUX
 import {Provider} from "react-redux";
 import store from "./redux/store";
-import {SET_UNAUTHENTICATED, SET_AUTHENTICATED} from "./redux/types";
+import {SET_AUTHENTICATED} from "./redux/types";
 import {logoutUser, getUserData} from "./redux/actions/userActions";
 
 import home from "./pages/home";
@@ -46,9 +46,14 @@ class App extends React.Component {
             <div className='container'>
               <Switch>
                 <Route path='/' exact component={home} />
-                <AuthRoute path='/login' component={login} />
-                <AuthRoute path='/signup' component={signup} />
-                <Route path='/users/:handle' component={user} />
+                <AuthRoute path='/login' exact component={login} />
+                <AuthRoute path='/signup' exact component={signup} />
+                <Route path='/users/:handle' exact component={user} />
+                <Route
+                  path='/users/:handle/scream/:screamId'
+                  exact
+                  component={user}
+                />
               </Switch>
             </div>
           </Router>

@@ -50,13 +50,29 @@ const styles = theme => ({
 
 class ScreamDialog extends Component {
   state = {
-    open: false
+    open: false,
+    oldPath: "",
+    newPath: ""
   };
+
+  componentDidMount() {
+    if (this.props.openDialog) {
+      this.handleOpen();
+    }
+  }
+
   handleOpen = () => {
-    this.setState({open: true});
+    let oldPath = window.location.pathname;
+    const {userHandle, screamId} = this.props;
+    const newPath = `/users/${userHandle}/scream/${screamId}`;
+    if (oldPath === newPath) oldPath = `/users/${userHandle}`;
+    window.history.pushState(null, null, newPath);
+
+    this.setState({open: true, oldPath, newPath});
     this.props.getScream(this.props.screamId);
   };
   handleClose = () => {
+    window.history.pushState(null, null, this.state.oldPath);
     this.setState({open: false});
     this.props.clearErrors();
   };
@@ -79,10 +95,10 @@ class ScreamDialog extends Component {
 
     const dialogMarkup = loading ? (
       <div className={classes.spinnerDiv}>
-        <CircularProgress size={100} thickness={2} />
+        <CircularProgress size={150} thickness={2} />
       </div>
     ) : (
-      <Grid container spacing={1}>
+      <Grid container spacing={4}>
         <Grid item sm={5}>
           <img src={userImage} alt='Profile' className={classes.profileImage} />
         </Grid>
@@ -96,7 +112,7 @@ class ScreamDialog extends Component {
             @{userHandle}
           </Typography>
           <hr className={classes.invisibleSeparator} />
-          <Typography color='primary' variant='body2'>
+          <Typography color='textSecondary' variant='body2'>
             {dayjs(createdAt).format("hh:mm a, MMM DD YYYY")}
           </Typography>
           <hr className={classes.invisibleSeparator} />
@@ -138,7 +154,6 @@ class ScreamDialog extends Component {
           >
             <CloseIcon />
           </MyButton>
-          {/* <DialogTitle>Post a new Scream</DialogTitle> */}
           <DialogContent className={classes.dialogContent}>
             {dialogMarkup}
           </DialogContent>

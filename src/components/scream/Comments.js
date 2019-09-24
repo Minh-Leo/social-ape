@@ -43,7 +43,7 @@ class Comments extends Component {
                       <Typography
                         variant='h5'
                         component={Link}
-                        to={`user/${userHandle}`}
+                        to={`users/${userHandle}`}
                         color='primary'
                       >
                         {userHandle}

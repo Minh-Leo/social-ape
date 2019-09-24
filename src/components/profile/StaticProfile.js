@@ -12,8 +12,6 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 
-import {connect} from "react-redux";
-
 const styles = theme => ({...theme.spreadIt});
 
 const StaticProfile = props => {
