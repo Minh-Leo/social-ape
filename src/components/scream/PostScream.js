@@ -39,11 +39,14 @@ class PostScream extends Component {
     errors: {}
   };
 
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps = nextProps => {
     if (nextProps.UI.errors) {
       return {errors: nextProps.UI.errors};
+    }
+    if (!nextProps.UI.errors && !nextProps.UI.loading) {
+      return {errors: {}};
     } else return null;
-  }
+  };
 
   handleOpen = () => {
     this.setState({open: true});
@@ -58,6 +61,7 @@ class PostScream extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.postScream({body: this.state.body});
+    this.setState({body: ""});
   };
 
   render() {

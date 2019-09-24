@@ -1,16 +1,16 @@
 export default {
   palette: {
     primary: {
-      light: "#33c9dc",
-      main: "#00bcd4",
-      dark: "#008394",
-      contrastText: "#fff"
+      light: "#63B8B8",
+      main: "#299E9E",
+      dark: "#1E5454",
+      contrastText: "#E6E6E6"
     },
     secondary: {
-      light: "#ff6333",
-      main: "#ff3d00",
-      dark: "#b22a00",
-      contrastText: "#fff"
+      light: "#FFA681",
+      main: "#FF8552",
+      dark: "#D16236",
+      contrastText: "#ECECEC"
     }
   },
   spreadIt: {
