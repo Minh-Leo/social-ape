@@ -21,6 +21,8 @@ import Navbar from "./components/layout/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
 const theme = createMuiTheme(themeFile);
+axios.defaults.baseURL =
+  "https://asia-east2-socialape-cdd8c.cloudfunctions.net/api";
 
 // Check authenticated status of user
 const token = localStorage.FBIdToken;
